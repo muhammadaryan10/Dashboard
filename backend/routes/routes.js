@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
 
 router.post('/Usermanage/add', async (req, res) => {
 console.log("in try")
+console.log(req.body)
   const { name, email, phone, city, age } = req.body;
   try {
     const userData = await User.create({

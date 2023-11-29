@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 // import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import EditIcon from '@mui/icons-material/Edit';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 export default function UserManagement() {
   const [tableData, setTableData] = useState([]);
@@ -18,6 +22,18 @@ export default function UserManagement() {
     { title: 'City', field: 'city' },
     { title: 'Age', field: 'age' },
   ];
+
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    console.log('Closing Select');
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    console.log('Opening Select');
+    setOpen(true);
+  }
 
   const getUserdata = (e) => {
     const { name, value } = e.target;
@@ -115,8 +131,34 @@ export default function UserManagement() {
                 <input type="text" id="name" name="name" className='border rounded m-1 p-2' required onChange={getUserdata} value={selectedUser?.name || ''} />
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" className='border rounded m-1 p-2' required onChange={getUserdata} value={selectedUser?.email || ''} />
-                <label htmlFor="city">City:</label>
-                <input type="text" id="city" name="city" className='border rounded m-1 p-2' required onChange={getUserdata} value={selectedUser?.city || ''} />
+                {/* < FormControl fullWidth> */}
+                {/* <InputLabel id="demo-controlled-open-select-label">City</InputLabel> */}
+                {/* <Select
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    open={open}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    label="Age"
+                    onChange={getUserdata}
+                    name='city'
+                    value={selectedUser?.city || ''}
+                    style={{ minWidth: 120, width: '100%' }}
+                  >
+                    <MenuItem value="Karachi">Karachi</MenuItem>
+                    <MenuItem value="Lahore">Lahore</MenuItem>
+                    <MenuItem value="Multan">Multan</MenuItem>
+                  </Select> */}
+                {/* </FormControl> */}
+                <select className="form-select p-2 border rounded my-2"
+                  onChange={getUserdata}
+                  name='city'
+                  value={selectedUser?.city || ''} aria-label="Default select example">
+                  <option selected>Select One</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Lahore">Lahore</option>
+                  <option value="Multan">Multan</option>
+                </select>
                 <label htmlFor="phone">Phone:</label>
                 <input type="number" id="phone" name="phone" pattern="[0-9]*" className='border rounded m-1 p-2' required onChange={getUserdata} value={selectedUser?.phone || ''} />
                 <label htmlFor="age">Age:</label>
@@ -135,7 +177,7 @@ export default function UserManagement() {
           <div className='font-bold text-2xl'>
             Users Information
             <Link to='/AddNewUser'>
-              <ControlPointIcon className='ml-6 accordion' style={{ color: 'blue', fontSize: '2rem' }}/>
+              <ControlPointIcon className='ml-6 accordion' style={{ color: 'blue', fontSize: '2rem' }} />
             </Link>
           </div>
         }

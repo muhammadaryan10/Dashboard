@@ -20,7 +20,12 @@ const userSchema = new mongoose.Schema({
   },
   age: { 
     type: Number
-}
+},
+courses:[
+  {
+    type:String
+  }
+]
 });
 
 const User = mongoose.model("User", userSchema);

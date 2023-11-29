@@ -156,16 +156,16 @@ export default function Dashboard() {
    return (
       <div>
          <Sidebar />
-         <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="flex items-center justify-center p-2 rounded bg-gray-50 dark:bg-gray-800">
+         <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="flex items-center justify-center p-2 rounded bg-gray-50 dark:bg-gray-800">
                <Chart
                   options={chartData.options}
                   series={chartData.series}
                   type="bar"
                />
             </div>
-            <div class="flex items-center justify-center p-2 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center p-2 rounded bg-gray-50 dark:bg-gray-800">
+               <p className="text-2xl text-gray-400 dark:text-gray-500">
                   <Chart
                      options={donutChart.options}
                      series={donutChart.series}
@@ -174,8 +174,8 @@ export default function Dashboard() {
                </p>
             </div>
          </div>
-         <div class="flex items-center justify-center  mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
+         <div className="flex items-center justify-center  mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p className="text-2xl text-gray-400 dark:text-gray-500">
                <Chart
                   options={candeklStick.options}
                   series={candeklStick.series}
@@ -183,9 +183,9 @@ export default function Dashboard() {
                />
             </p>
          </div>
-         <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
+         <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+               <p className="text-2xl text-gray-400 dark:text-gray-500">
                   <Chart
                      options={progressBar.options}
                      series={progressBar.options.series}
@@ -193,8 +193,8 @@ export default function Dashboard() {
                   />
                </p>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+               <p className="text-2xl text-gray-400 dark:text-gray-500">
                   <Chart
                      options={simpleProgressBar.options}
                      series={simpleProgressBar.options.series}
@@ -202,8 +202,8 @@ export default function Dashboard() {
                   />
                </p>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50  dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center rounded bg-gray-50  dark:bg-gray-800">
+               <p className="text-2xl text-gray-400 dark:text-gray-500">
                   <Chart
                      options={chartData.options}
                      series={chartData.series}
@@ -211,10 +211,10 @@ export default function Dashboard() {
                   />
                </p>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50  dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <div class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                     <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center rounded bg-gray-50  dark:bg-gray-800">
+               <p className="text-2xl text-gray-400 dark:text-gray-500">
+                  <div className="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+                     <p className="text-2xl text-gray-400 dark:text-gray-500">
                         <Chart
                            options={donutChart.options}
                            series={donutChart.series}
